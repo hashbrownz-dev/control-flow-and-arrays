@@ -1,7 +1,14 @@
 //Exercise 1
 
-let num = 6;
+let num = -6;
 
+if(num >= 0){
+    console.log("Positive");
+} else {
+    console.log("Negative");
+}
+
+//Check for Even or Odd (I misread the directions)
 if(!(num % 2)){
     console.log("Even");
 } else {
