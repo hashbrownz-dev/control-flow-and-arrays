@@ -117,8 +117,54 @@ class Character{
     }
 }
 
+//If the child class uses the same constructor, you don't have to add a new one in the class definition!!!
+
+class Hobbit extends Character{
+    steal(){
+        console.log("Let's get away!!!");
+    }
+}
+
+//If the child class has unique properties that do not require a constructor call, these properties can be added on the prototype!!!
+
+//Finally SUPER can be used in methods other than the constructor!  super basically makes a call to any methods or properties that exist on the parent class.
+
+Hobbit.prototype.weapon = 'Large and in Charge';
+
 const me = new Character('James', 1, 4, 'Black', "None");
 me.greet();
 me.greet('Laura');
 me.smite();
-console.log(me);
+
+const frodo = new Hobbit('Frodo', 2, 2, 'brown', 'black');
+
+class Car{
+    constructor(maker, serialNumber){
+        this.maker = maker;
+        this.serialNumber = serialNumber;
+    }
+    drive(){
+        console.log('Vroom! Vroom!');
+    }
+}
+
+class Factory{
+    constructor(company){
+        this.company = company;
+        this.cars = [];
+    }
+    generateCar(){
+        const newCar = new Car(this.company, this.cars.length);
+        this.cars.push(newCar);
+    }
+    findCar(index){
+        return this.cars[index];
+    }
+}
+
+const tesla = new Factory('Tesla');
+for(let i = 0; i < 10; i++){
+    tesla.generateCar();
+}
+console.log(tesla);
+console.log(tesla.findCar(0));
