@@ -110,9 +110,15 @@ class Character{
     smite(){
         console.log('I smite thee you vile person.');
     }
+
+    set setHair(color = "red"){
+        this.hair = color;
+        console.log(this.hair);
+    }
 }
 
 const me = new Character('James', 1, 4, 'Black', "None");
 me.greet();
 me.greet('Laura');
 me.smite();
+console.log(me);
