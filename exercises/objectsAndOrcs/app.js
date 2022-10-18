@@ -46,3 +46,73 @@ console.log(movies[0].title);
 for (let i = 0; i < movies.length; i++){
     console.log(movies[i].title);
 }
+//Combine objects, arrays, and functions
+const foo = {
+    someArray:[1,2,3],
+    someObject:{
+        someProperty: 'oh Hai!'
+    },
+    someFunction: () => {
+        console.log('I am a function!');
+    }
+}
+console.log(foo.someArray[2]);
+console.log(foo.someObject.someProperty);
+foo.someFunction();
+
+//You can store an object in an array
+const foo2 = [
+    {name:'Object 1', mood:'vibin'},
+    {name:'Object 2', mood:'slimin'},
+    {name:'Object 3', mood:'bout dat life'}
+]
+
+//You can store an array in an array
+const foo3 = [
+    ['0,0','0,1','0,2'],
+    ['1,0','1,1','1,2'],
+    ['2,0','2,1','2,2']
+];
+//You can store a function in an array
+function introduction(){
+    console.log('Hello!');
+}
+function greeting(name = 'Roosevelt'){
+    console.log(`My name is ${name}!`);
+}
+function goodbye(){
+    console.log(`I must take my leave now.  Good Bye!`)
+}
+
+const myFunctions = [introduction, greeting, goodbye];
+//console.log(myFunctions);
+for(let i = 0; i < myFunctions.length; i++){
+    myFunctions[i]('Joaquin');
+}
+
+//Create a class
+
+class Character{
+    constructor(name, legs, arms, eyes, hair){
+        this.name = name;
+        this.legs = legs;
+        this.arms = arms;
+        this.eyes = eyes;
+        this.hair = hair;
+    }
+    greet(otherCharacter){
+        let message = "Hi"
+        if(otherCharacter){
+            message += " " + otherCharacter;
+        }
+        console.log(message+"!");
+    }
+    smite(){
+        console.log('I smite thee you vile person.');
+    }
+}
+
+const me = new Character('James', 1, 4, 'Black', "None");
+me.greet();
+me.greet('Laura');
+me.smite();
